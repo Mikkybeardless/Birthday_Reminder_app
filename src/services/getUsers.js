@@ -1,4 +1,4 @@
-import User from "../database/model/user.schema.js";
+import { User } from "../database/model/user.schema.js";
 
 export const getAllUsers = async () => {
   try {
