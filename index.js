@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 const MONGODB_URL = process.env.MONGODB_URL;
 
 app.use(express.json());
-app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/", (req, res) => res.send("Welcome to birthday reminder App!"));
 app.use("/users", userRoute);
 
 // catch all route
@@ -28,4 +28,5 @@ connect(MONGODB_URL)
   })
   .catch((error) => {
     console.error("Error connecting to DB:", error.message);
+    process.exit(1);
   });
