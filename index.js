@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { connect } from "mongoose";
 import userRoute from "./src/routes/user.route.js";
+import everyDayJob from "./src/services/Job.js";
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.all("*", (req, res) => {
 connect(MONGODB_URL)
   .then(() => {
     console.log("Connected to DB");
+    // Run the job everyday
+    everyDayJob();
     app.listen(port, () =>
       console.log(`server is listening on port http://localhost:${port}`)
     );

@@ -1,6 +1,6 @@
 import Cron from "croner";
-import checkBirthday from "./checkBirthday";
-const everyDay = () => {
+import checkBirthday from "./checkBirthday.js";
+const everyDayJob = () => {
   const date = new Date();
   const time = date.toLocaleTimeString();
   const job = Cron("0 07 * * 0-6", () => {
@@ -9,4 +9,4 @@ const everyDay = () => {
     checkBirthday();
   });
 };
-export default everyDay;
+export default everyDayJob;

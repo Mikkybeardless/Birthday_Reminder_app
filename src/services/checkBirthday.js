@@ -1,4 +1,4 @@
-import sendBirthdayEmail from "./mail";
+import sendBirthdayEmail from "./sendMail.js";
 
 const checkBirthday = (users) => {
   users.forEach((user) => {
