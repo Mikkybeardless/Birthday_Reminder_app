@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 const MONGODB_URL = process.env.MONGODB_URL;
 
 app.use(express.json());
-app.get("/", (req, res) => res.send("Welcome to birthday reminder App!"));
+app.get("/", (req, res) => res.json("Welcome to birthday reminder App!"));
 app.use("/users", userRoute);
 
 // catch all route
